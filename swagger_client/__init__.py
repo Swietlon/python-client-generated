@@ -19,4 +19,52 @@ from swagger_client.api.default_api import DefaultApi
 # import ApiClient
 from swagger_client.api_client import ApiClient
 from swagger_client.configuration import Configuration
+from swagger_client import DefaultApi
+from swagger_client.rest import ApiException
+from pprint import pprint
 # import models into sdk package
+configuration = Configuration()
+
+# create an instance of the API class
+api_instance = DefaultApi(ApiClient(configuration))
+x = 3.4 # float | First element of sum
+y = 3.4 # float | Second element of sum
+
+try:
+    api_response = api_instance.addition_get(x, y)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->addition_get: %s\n" % e)
+
+# create an instance of the API class
+api_instance = DefaultApi(ApiClient(configuration))
+x = 3.4 # float | The dividend
+y = 3.4 # float | The divider
+
+try:
+    api_response = api_instance.division_get(x, y)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->division_get: %s\n" % e)
+
+# create an instance of the API class
+api_instance = DefaultApi(ApiClient(configuration))
+x = 3.4 # float | First element of product
+y = 3.4 # float | Second element of product
+
+try:
+    api_response = api_instance.multiplication_get(x, y)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->multiplication_get: %s\n" % e)
+
+# create an instance of the API class
+api_instance = DefaultApi(ApiClient(configuration))
+x = 3.4 # float | The minuend
+y = 3.4 # float | The subtrahend
+
+try:
+    api_response = api_instance.substraction_get(x, y)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->substraction_get: %s\n" % e)
